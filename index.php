@@ -24,7 +24,7 @@ try {
 	print "Results: \n";
 	print_r($response->results);
 	print "\n---------------\n";
-	
+	/*
 	// Delete deOne
 	print_r("Delete deOne  \n");
 	$deleteDE = new ET_DataExtension();
@@ -52,6 +52,7 @@ try {
 	print 'Results: '."\n";
 	print_r($deleteResult->results);
 	print "\n---------------\n";
+	*/
 	
 }
 catch (Exception $e) {
