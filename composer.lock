@@ -60,6 +60,7 @@
     "prefer-lowest": false,
     "platform": {
         "ext-curl": "*",
+        "ext-mcrypt": "*",
         "ext-openssl": "*",
         "ext-soap": "*",
         "php": ">=5.2.3"
