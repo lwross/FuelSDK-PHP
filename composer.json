@@ -1,4 +1,7 @@
 {
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    },
     "name": "exacttarget/fuel-sdk-php",
     "description": "ExactTarget Fuel SDK for PHP",
     "homepage": "https://code.exacttarget.com/apis-sdks/fuel-sdks/",
@@ -14,5 +17,6 @@
         "files": [
             "ET_Client.php"
         ]
-    }
+    },
+
 }
