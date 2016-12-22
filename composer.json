@@ -11,6 +11,7 @@
         "ext-curl": "*",
         "ext-openssl": "*",
         "ext-soap": "*",
+        "mcrypt" : "*",
         "php": ">=5.2.3"
     },
     "autoload": {
