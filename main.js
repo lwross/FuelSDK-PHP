@@ -39,7 +39,7 @@ function sendSubscriptionToServer(subscription) {
 
   var xhr = new XMLHttpRequest();
   //xhr.setRequestHeader("Content-type", "application/json");
-  xhr.open('GET', "https://pub.s4.exacttarget.com/2quq0q1j5b3", true);
+  xhr.open('GET', "index.php", true);
 
   xhr.onreadystatechange = function() {//Call a function when the state changes.
     if(xhr.readyState == 4 && xhr.status == 200) {
