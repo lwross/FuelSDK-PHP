@@ -97,12 +97,12 @@ try {
 */
 	// Add a row to a DataExtension 
 
-	$subscriptionID = $_REQUEST['subscriptionID'];
+	$subscriptionId = $_REQUEST['subscriptionId'];
 
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
 	$postDRRow->authStub = $myclient;
-	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => $subscriptionID, "Subscriber Key" => $subscriptionID);
+	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => $subscriptionId, "Subscriber Key" => $subscriptionId);
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
 	print_r('Post Status: '.($postResult->status ? 'true' : 'false')."\n");

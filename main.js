@@ -44,7 +44,7 @@ function sendSubscriptionToServer(subscription) {
 
   var xhr = new XMLHttpRequest();
   //xhr.setRequestHeader("Content-type", "application/json");
-  xhr.open('GET', "register.php?subscriptionID=" + subscriptionID, true);
+  xhr.open('GET', "register.php?subscriptionId=" + subscriptionId, true);
 
   xhr.onreadystatechange = function() {//Call a function when the state changes.
     if(xhr.readyState == 4 && xhr.status == 200) {
