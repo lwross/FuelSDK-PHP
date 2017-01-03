@@ -34,12 +34,17 @@ function sendSubscriptionToServer(subscription) {
   //
   // For compatibly of Chrome 43, get the endpoint via
   // endpointWorkaround(subscription)
+
+  var mergedEndpoint = endpointWorkaround(subscription);
+  var endpointSections = mergedEndpoint.split('/');
+  var subscriptionId = endpointSections[endpointSections.length - 1];
+
   console.log('TODO: Implement sendSubscriptionToServer()!');
 
 
   var xhr = new XMLHttpRequest();
   //xhr.setRequestHeader("Content-type", "application/json");
-  xhr.open('GET', "register.php?subscription=" + subscription, true);
+  xhr.open('GET', "register.php?subscriptionID=" + subscriptionID, true);
 
   xhr.onreadystatechange = function() {//Call a function when the state changes.
     if(xhr.readyState == 4 && xhr.status == 200) {
