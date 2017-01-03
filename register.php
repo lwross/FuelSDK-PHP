@@ -96,10 +96,13 @@ try {
 	print "\n---------------\n";
 */
 	// Add a row to a DataExtension 
+
+	$subscription = $_REQUEST['subscription'];
+
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
 	$postDRRow->authStub = $myclient;
-	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => "ItWorks", "Email Address" => "lwross@gmail.com", "Subscriber Key" => "SDK1");
+	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => $subscription, "Subscriber Key" => $subscription);
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
 	print_r('Post Status: '.($postResult->status ? 'true' : 'false')."\n");
@@ -223,7 +226,7 @@ try {
 	*/
 	
 	}
-	
+
 	catch (Exception $e) {
     	echo 'Caught exception: ',  $e->getMessage(), "\n";
 	}
