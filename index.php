@@ -3,7 +3,10 @@
 require('ET_Client.php');
 try {	
 	$myclient = new ET_Client();
-		
+
+	$DataExtensionNameForTesting = "PHPSDKTestDE";
+
+		/*
 	//DataExtension Testing
 	//Get all Data Extensions
 	print_r("Get all Data Extensions \n");
@@ -19,13 +22,13 @@ try {
 	print 'Results: '."\n";
 	print_r($getResult->results);
 	print "\n---------------\n";
-/*
+
 	// Specify a name for the data extension that will be used for testing 
 	// Note: Name and CustomerKey will be the same value
 	// WARNING: Data Extension will be deleted so don't use the name of a
 	// production data extension 
 	
-	$DataExtensionNameForTesting = "PHPSDKTestDE";
+
 
 	// Create a Data Extension
 	print_r("Create a Data Extension  \n");
@@ -91,12 +94,12 @@ try {
 	print 'Results: '."\n";
 	print_r($getResult->results);
 	print "\n---------------\n";
-
+*/
 	// Add a row to a DataExtension 
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
 	$postDRRow->authStub = $myclient;
-	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => "ItWorks");
+	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => "ItWorks", "Email Address" => "lwross@gmail.com", "Subscriber Key" => "SDK1");
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
 	print_r('Post Status: '.($postResult->status ? 'true' : 'false')."\n");
@@ -106,7 +109,7 @@ try {
 	print 'Results: '."\n";
 	print_r($postResult->results);
 	print "\n---------------\n";
-
+/*
 	// Add a row to a DataExtension (Specify CustomerKey instead of Name)
 	print_r("Add a row to a DataExtension (Specify CustomerKey instead of Name)  \n");
 	$postDRRow = new ET_DataExtension_Row();
