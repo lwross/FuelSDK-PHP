@@ -40,7 +40,7 @@ function sendSubscriptionToServer(subscription) {
   var subscriptionId = endpointSections[endpointSections.length - 1];
 
   console.log('TODO: Implement sendSubscriptionToServer()!');
-
+  subscription.subscriptionId = subscriptionId;
 
   var xhr = new XMLHttpRequest();
   //xhr.setRequestHeader("Content-type", "application/json");
