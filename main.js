@@ -54,12 +54,13 @@ function sendSubscriptionToServer(subscription) {
 
   xhr.send();
 
-
   var mergedEndpoint = endpointWorkaround(subscription);
 
   // This is just for demo purposes / an easy to test by
   // generating the appropriate cURL command
   showCurlCommand(mergedEndpoint);
+
+  var jsonversion = JSON.stringify(subscription);
 }
 
 // NOTE: This code is only suitable for GCM endpoints,
