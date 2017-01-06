@@ -96,6 +96,8 @@ try {
 	print "\n---------------\n";
 */
 	// Add a row to a DataExtension 
+	print_r($_REQUEST);
+	die();
 
 	$subscriptionId = $_REQUEST['subscriptionId'];
 
