@@ -97,6 +97,8 @@ try {
 */
 	// Add a row to a DataExtension 
 	print_r($_REQUEST);
+	$request_body = file_get_contents('php://input');
+	print_r($request_body);
 	die();
 
 	$subscriptionId = $_REQUEST['subscriptionId'];
