@@ -104,10 +104,9 @@ try {
 	//die();
 
 	$authKey = $request_data->subscription->keys->auth;
-	$p256dhKey = $request_data->subscription->keys->p256dhKey;
+	$p256dhKey = $request_data->subscription->keys->p256dh;
 
-	var_dump($request_data);
-		var_dump($request_data->subscription->keys);
+	
 
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
@@ -117,7 +116,6 @@ try {
 							  "Subscriber Key" => $subscriptionId,
 							  "Auth Key" => $authKey,
 							  "p256dh Key" => $p256dhKey);
-	print_r($postDRRow);
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
 	print_r('Post Status: '.($postResult->status ? 'true' : 'false')."\n");
