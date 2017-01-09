@@ -103,12 +103,19 @@ try {
 	//print_r($subscriptionId);
 	//die();
 
+	$authKey = $request_data->keys->auth;
+	$p256dhKey = $request_data->keys->p256dhKey;
+
 	
 
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
 	$postDRRow->authStub = $myclient;
-	$postDRRow->props = array("Key" => "PHPSDKTEST", "Value" => $subscriptionId, "Subscriber Key" => $subscriptionId);
+	$postDRRow->props = array("Key" => "PHPSDKTEST", 
+							  "Subscription ID" => $subscriptionId, 
+							  "Subscriber Key" => $subscriptionId,
+							  "Auth Key" => $authKey,
+							  "p256dh Key" => $p256dhKey);
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
 	print_r('Post Status: '.($postResult->status ? 'true' : 'false')."\n");
