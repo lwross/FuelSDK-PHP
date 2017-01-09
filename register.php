@@ -99,7 +99,7 @@ try {
 	$request_body = file_get_contents('php://input');
 	$request_data = json_decode($request_body);
 	print_r($request_data);
-	$subscriptionId = $request_data['id'];
+	$subscriptionId = $request_data->id;
 	print_r($subscriptionId);
 	die();
 
