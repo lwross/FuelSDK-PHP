@@ -103,10 +103,11 @@ try {
 	//print_r($subscriptionId);
 	//die();
 
-	$authKey = $request_data->keys->auth;
-	$p256dhKey = $request_data->keys->p256dhKey;
+	$authKey = $request_data->subscription->keys->auth;
+	$p256dhKey = $request_data->subscription->keys->p256dhKey;
 
-	print_r($authKey);
+	var_dump($request_data);
+		var_dump($request_data->subscription->keys);
 
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
