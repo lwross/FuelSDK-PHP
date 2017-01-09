@@ -40,9 +40,13 @@ function sendSubscriptionToServer(subscription) {
   var subscriptionId = endpointSections[endpointSections.length - 1];
 
   console.log('TODO: Implement sendSubscriptionToServer()!');
-  subscription.subscriptionId = subscriptionId;
+  subscription["subscriptionId"] = subscriptionId;
 
-  alert(subscription);
+  var fullSubscription = {
+    id: subscriptionId,
+    subscription: subscription
+  };
+
 
   var xhr = new XMLHttpRequest();
   //xhr.setRequestHeader("Content-type", "application/json");
@@ -50,7 +54,7 @@ function sendSubscriptionToServer(subscription) {
 
   xhr.open("POST", "register.php");
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xhr.send(JSON.stringify(subscription));
+  xhr.send(JSON.stringify(fullSubscription));
 
 
   xhr.onreadystatechange = function() {//Call a function when the state changes.

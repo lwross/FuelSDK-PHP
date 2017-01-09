@@ -99,11 +99,11 @@ try {
 	$request_body = file_get_contents('php://input');
 	$request_data = json_decode($request_body);
 	print_r($request_data);
-	$subscriptionId = $request_data['subscriptionId'];
+	$subscriptionId = $request_data['id'];
 	print_r($subscriptionId);
 	die();
 
-	$subscriptionId = $_REQUEST['subscriptionId'];
+	
 
 	print_r("Add a row to a DataExtension  \n");
 	$postDRRow = new ET_DataExtension_Row();
