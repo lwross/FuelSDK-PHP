@@ -98,10 +98,10 @@ try {
 	// Add a row to a DataExtension 
 	$request_body = file_get_contents('php://input');
 	$request_data = json_decode($request_body);
-	var_dump($request_data);
+	//var_dump($request_data);
 	$subscriptionId = $request_data->id;
-	print_r($subscriptionId);
-	die();
+	//print_r($subscriptionId);
+	//die();
 
 	
 
