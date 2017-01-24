@@ -39,7 +39,7 @@ function sendSubscriptionToServer(subscription) {
   var endpointSections = mergedEndpoint.split('/');
   var subscriptionId = endpointSections[endpointSections.length - 1];
 
-  console.log('TODO: Implement sendSubscriptionToServer()!');
+  console.log('function sendSubscriptionToServer()');
   subscription["subscriptionId"] = subscriptionId;
 
   var fullSubscription = {
@@ -54,7 +54,7 @@ function sendSubscriptionToServer(subscription) {
 
   xhr.open("POST", "register.php");
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xhr.send(JSON.stringify(fullSubscription));
+  
 
 
   xhr.onreadystatechange = function() {//Call a function when the state changes.
@@ -63,7 +63,7 @@ function sendSubscriptionToServer(subscription) {
     }
   }
 
-  xhr.send();
+  xhr.send(JSON.stringify(fullSubscription));
 
   var mergedEndpoint = endpointWorkaround(subscription);
 
