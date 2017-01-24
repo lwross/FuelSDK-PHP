@@ -1,6 +1,9 @@
 <?php
 
 require('ET_Client.php');
+
+use Minishlink\WebPush\WebPush;
+
 try {	
 	$myclient = new ET_Client();
 
