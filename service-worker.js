@@ -10,10 +10,10 @@ self.addEventListener('push', function(event) {
 
   if (event.data) {
     console.log(event.data.json());
-    title = event.data.title;
-    body = event.data.body;
-    icon = event.data.icon;
-    tag = event.data.tag;
+    title = event.data.json().title;
+    body = event.data.json().body;
+    icon = event.data.json().icon;
+    tag = event.data.json().tag;
   }
 
   event.waitUntil(
