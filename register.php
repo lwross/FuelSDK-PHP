@@ -114,10 +114,10 @@ try {
 	$postDRRow = new ET_DataExtension_Row();
 	$postDRRow->authStub = $myclient;
 	$postDRRow->props = array("Key" => "PHPSDKTEST", 
-							  "Subscription ID" => $subscriptionId, 
-							  "Subscriber Key" => $subscriptionId,
-							  "Auth Key" => $authKey,
-							  "p256dh Key" => $p256dhKey,
+							  "SubscriptionID" => $subscriptionId, 
+							  "SubscriberKey" => $subscriptionId,
+							  "AuthKey" => $authKey,
+							  "p256dhKey" => $p256dhKey,
 							  "Subscription" => json_encode($subscription));
 	$postDRRow->Name = $DataExtensionNameForTesting;	
 	$postResult = $postDRRow->post();
