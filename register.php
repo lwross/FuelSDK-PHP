@@ -44,10 +44,15 @@ try {
 		print 'Message: '.$postResult->message."\n";	
 		print 'Result Count: '.count($postResult->results)."\n";
 		print 'Results: '."\n";
-		print_r($postResult->results);
+		//print_r($postResult->results);
 		print "\n---------------\n";
 
 		$patchResult = $postDRRow->patch();
+		print_r('Patch Status: '.($patchResult->status ? 'true' : 'false')."\n");
+		print 'Code: '.$patchResult->code."\n";
+		print 'Message: '.$patchResult->message."\n";	
+		print 'Result Count: '.count($patchResult->results)."\n";
+		print 'Results: '."\n";
 /*
 		// Update a row in a DataExtension 
 		print_r("Update a row in a DataExtension   \n");
