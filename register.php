@@ -46,6 +46,24 @@ try {
 		print 'Results: '."\n";
 		print_r($postResult->results);
 		print "\n---------------\n";
+
+		$patchResult = $postDRRow->patch();
+/*
+		// Update a row in a DataExtension 
+		print_r("Update a row in a DataExtension   \n");
+		$patchDRRow = new ET_DataExtension_Row();
+		$patchDRRow->authStub = $myclient;
+		$patchDRRow->props = array("Key" => "PHPSDKTEST", "Value" => "ItWorksUPDATED!");
+		$patchDRRow->CustomerKey = $DataExtensionNameForTesting;	
+		$patchResult = $patchDRRow->patch();
+		print_r('Patch Status: '.($patchResult->status ? 'true' : 'false')."\n");
+		print 'Code: '.$patchResult->code."\n";
+		print 'Message: '.$patchResult->message."\n";	
+		print 'Result Count: '.count($patchResult->results)."\n";
+		print 'Results: '."\n";
+		print_r($patchResult->results);
+		print "\n---------------\n";
+		*/
 		
 	}
 
