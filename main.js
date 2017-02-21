@@ -35,6 +35,10 @@ function sendSubscriptionToServer(subscription) {
   // For compatibly of Chrome 43, get the endpoint via
   // endpointWorkaround(subscription)
 
+  var firstName = document.getElementById('userFirstName').value;
+  var lastName = document.getElementById('userLastName').value;
+  var email = document.getElementById('userEmail').value;
+
   var mergedEndpoint = endpointWorkaround(subscription);
   var endpointSections = mergedEndpoint.split('/');
   var subscriptionId = endpointSections[endpointSections.length - 1];
@@ -44,7 +48,10 @@ function sendSubscriptionToServer(subscription) {
 
   var fullSubscription = {
     id: subscriptionId,
-    subscription: subscription
+    subscription: subscription,
+    firstName: firstName,
+    lastName: lastName,
+    email: email
   };
 
 
