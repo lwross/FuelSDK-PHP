@@ -55,16 +55,11 @@ function sendSubscriptionToServer(subscription) {
     browserPushOptin: true
   };
 
-
   var xhr = new XMLHttpRequest();
-  //xhr.setRequestHeader("Content-type", "application/json");
- // xhr.open('GET', "register.php?subscriptionId=" + subscriptionId, true);
 
   xhr.open("POST", "register.php");
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   
-
-
   xhr.onreadystatechange = function() {//Call a function when the state changes.
     if(xhr.readyState == 4 && xhr.status == 200) {
         alert(xhr.responseText);
@@ -127,11 +122,42 @@ function unsubscribe() {
         // the users data from your data store so you
         // don't attempt to send them push messages anymore
 
+
         // We have a subcription, so call unsubscribe on it
         pushSubscription.unsubscribe().then(function() {
           pushButton.disabled = false;
           pushButton.textContent = 'Enable Push Messages';
           isPushEnabled = false;
+
+          console.log(pushSubscription);
+
+/*
+          // unsubscribe them in Marketng Cloud
+          var fullSubscription = {
+            id: subscriptionId,
+            subscription: subscription,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            browserPushOptin: false
+          };
+
+          var xhr = new XMLHttpRequest();
+
+          xhr.open("POST", "register.php");
+          xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          
+          xhr.onreadystatechange = function() {//Call a function when the state changes.
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                alert(xhr.responseText);
+            }
+          }
+
+          xhr.send(JSON.stringify(fullSubscription));
+
+*/
+
+
         }).catch(function(e) {
           // We failed to unsubscribe, this can lead to
           // an unusual state, so may be best to remove
