@@ -7,19 +7,18 @@ use Minishlink\WebPush\WebPush;
 try {	
 		$myclient = new ET_Client();
 
-		$DataExtensionNameForTesting = "PHPSDKTestDE";
-
+		$dataExtensionExternalKey = "BrowserPushSubscribersExternalKey";
+		$dataExtensionName = "BrowserPushSubscribers";
 			
 		// Add a row to a DataExtension 
 		$request_body = file_get_contents('php://input');
 		$request_data = json_decode($request_body);
-		//var_dump($request_data);
 		$subscriptionId = $request_data->id;
 		$firstName = $request_data->firstName;
 		$lastName = $request_data->lastName;
 		$email = $request_data->email;
-		//print_r($subscriptionId);
-		//die();
+		$browserPushOptin = $request_data->browserPushOptin;
+
 
 		$authKey = $request_data->subscription->keys->auth;
 		$p256dhKey = $request_data->subscription->keys->p256dh;
@@ -28,23 +27,22 @@ try {
 		print_r("Add a row to a DataExtension  \n");
 		$postDRRow = new ET_DataExtension_Row();
 		$postDRRow->authStub = $myclient;
-		$postDRRow->props = array("Key" => "PHPSDKTEST", 
+		$postDRRow->props = array("Key" => $dataExtensionExternalKey, 
 								  "SubscriptionID" => $subscriptionId, 
 								  "SubscriberKey" => $email,
 								  "FirstName" => $firstName,
 								  "LastName" => $lastName,
 								  "EmailAddress" => $email,
+								  "BrowserPushOptin" => $browserPushOptin,
 								  "AuthKey" => $authKey,
 								  "p256dhKey" => $p256dhKey,
 								  "Subscription" => json_encode($subscription));
-		$postDRRow->Name = $DataExtensionNameForTesting;	
+		$postDRRow->Name = $dataExtensionName;	
 		$postResult = $postDRRow->post();
 		print_r('Post Status: '.($postResult->status ? 'true' : 'false')."\n");
 		print 'Code: '.$postResult->code."\n";
 		print 'Message: '.$postResult->message."\n";	
 		print 'Result Count: '.count($postResult->results)."\n";
-		print 'Results: '."\n";
-		//print_r($postResult->results);
 		print "\n---------------\n";
 
 		$patchResult = $postDRRow->patch();
@@ -52,21 +50,21 @@ try {
 		print 'Code: '.$patchResult->code."\n";
 		print 'Message: '.$patchResult->message."\n";	
 		print 'Result Count: '.count($patchResult->results)."\n";
+
+		/*
+		// Delete a row from a DataExtension 
+		print_r("Delete a row from a DataExtension   \n");
+		$deleteDRRow = new ET_DataExtension_Row();
+		$deleteDRRow->authStub = $myclient;
+		$deleteDRRow->props = array("Key" => $dataExtensionExternalKey, "Value" => "ItWorksUPDATED!");
+		$deleteDRRow->CustomerKey = $DataExtensionName;	
+		$deleteResult = $deleteDRRow->delete();
+		print_r('Delete Status: '.($deleteResult->status ? 'true' : 'false')."\n");
+		print 'Code: '.$deleteResult->code."\n";
+		print 'Message: '.$deleteResult->message."\n";	
+		print 'Result Count: '.count($deleteResult->results)."\n";
 		print 'Results: '."\n";
-/*
-		// Update a row in a DataExtension 
-		print_r("Update a row in a DataExtension   \n");
-		$patchDRRow = new ET_DataExtension_Row();
-		$patchDRRow->authStub = $myclient;
-		$patchDRRow->props = array("Key" => "PHPSDKTEST", "Value" => "ItWorksUPDATED!");
-		$patchDRRow->CustomerKey = $DataExtensionNameForTesting;	
-		$patchResult = $patchDRRow->patch();
-		print_r('Patch Status: '.($patchResult->status ? 'true' : 'false')."\n");
-		print 'Code: '.$patchResult->code."\n";
-		print 'Message: '.$patchResult->message."\n";	
-		print 'Result Count: '.count($patchResult->results)."\n";
-		print 'Results: '."\n";
-		print_r($patchResult->results);
+		print_r($deleteResult->results);
 		print "\n---------------\n";
 		*/
 		

@@ -51,7 +51,8 @@ function sendSubscriptionToServer(subscription) {
     subscription: subscription,
     firstName: firstName,
     lastName: lastName,
-    email: email
+    email: email,
+    browserPushOptin: true
   };
 
 
