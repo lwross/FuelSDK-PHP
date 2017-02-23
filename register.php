@@ -43,6 +43,8 @@ try {
 		print 'Code: '.$postResult->code."\n";
 		print 'Message: '.$postResult->message."\n";	
 		print 'Result Count: '.count($postResult->results)."\n";
+		print 'Results: '."\n";
+		print_r($postResult->results);
 		print "\n---------------\n";
 
 		$patchResult = $postDRRow->patch();

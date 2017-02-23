@@ -62,7 +62,8 @@ function sendSubscriptionToServer(subscription) {
   
   xhr.onreadystatechange = function() {//Call a function when the state changes.
     if(xhr.readyState == 4 && xhr.status == 200) {
-        alert(xhr.responseText);
+      console.log(xhr.responseText);
+        //alert(xhr.responseText);
     }
   }
 
@@ -122,6 +123,7 @@ function unsubscribe() {
         // the users data from your data store so you
         // don't attempt to send them push messages anymore
 
+        console.log(pushSubscription);
 
         // We have a subcription, so call unsubscribe on it
         pushSubscription.unsubscribe().then(function() {
@@ -129,7 +131,7 @@ function unsubscribe() {
           pushButton.textContent = 'Enable Push Messages';
           isPushEnabled = false;
 
-          console.log(pushSubscription);
+
 
 /*
           // unsubscribe them in Marketng Cloud
