@@ -52,7 +52,7 @@ function sendSubscriptionToServer(subscription) {
     firstName: firstName,
     lastName: lastName,
     email: email,
-    browserPushOptin: true
+    browserPushOptin: "true"
   };
 
   var xhr = new XMLHttpRequest();
