@@ -97,6 +97,7 @@ function showCurlCommand(mergedEndpoint) {
     ' -d "{\\"registration_ids\\":[\\"' + subscriptionId + '\\"]}"';
 
   //curlCommandDiv.textContent = curlCommand;
+  console.log(curlCommand);
 }
 
 function unsubscribe() {
