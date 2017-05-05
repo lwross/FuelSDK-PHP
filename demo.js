@@ -7,7 +7,8 @@ function Debug() {
 Debug.prototype.log = function() {
   var paragraphElement = document.createElement('p');
   paragraphElement.textContent = Array.prototype.join.call(arguments, '');
-  document.querySelector('.js-log').appendChild(paragraphElement);
+  //document.querySelector('.js-log').appendChild(paragraphElement);
+  console.log(paragraphElement.textContent);
 };
 
 window.addEventListener('load', function() {
