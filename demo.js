@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
   heading.textContent = 'Log';
   logDiv.appendChild(heading);
 
-  document.body.appendChild(logDiv);
+  //document.body.appendChild(logDiv);
 
   window.Demo = window.Demo || {};
   window.Demo.debug = window.Demo.debug || new Debug();
