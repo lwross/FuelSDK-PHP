@@ -5,7 +5,7 @@
   
 
 
-<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
  
   <tr>
    <td align="center" style="padding-bottom: 20px; font-family: Arial,Helvetica,sans-serif; font-size: 20px; color: #000000; line-height: 24px; text-align: center;" valign="top"><img data-assetid="467021" height="auto" src="http://image.s4.exct.net/lib/fe9d15747762067e75/m/1/ed963825-027e-4c8e-88f6-fc8c028f04bc.png" style="height:auto;width:100%;border-top: 1px solid #000000; border-right: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-align: center;" width="100%"></td>
@@ -38,7 +38,7 @@
  
 
 
-<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
  
   <tr>
    <td align="center" style="padding-bottom: 20px; font-family: Arial,Helvetica,sans-serif; font-size: 20px; color: #000000; line-height: 24px; text-align: center;" valign="top"><img data-assetid="467017" height="auto" src="http://image.s4.exct.net/lib/fe9d15747762067e75/m/1/700e49f1-5068-460b-87fc-0d9ca73e0922.jpg" style="height:auto;width:100%;border-top: 1px solid #000000; border-right: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; text-align: center;" width="100%"></td>
