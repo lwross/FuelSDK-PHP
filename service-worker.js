@@ -3,10 +3,10 @@
 self.addEventListener('push', function(event) {
   console.log('Received a push message', event);
 
-  var title = 'FREE SHIPPING on All TVs';
-  var body = '4K, Curved Screens & More!';
+  var title = 'Push Title';
+  var body = 'Push Body';
   var icon = 'https://www.videopro.com.au/images/product/micro/8491_1.jpg';
-  var tag = 'simple-push-demo-notification-tag';
+  var tag = 'Push Tag';
 
   if (event.data) {
     console.log(event.data.json());
